@@ -27,6 +27,12 @@ class UrlsController < ApplicationController
 		@url.destroy
 		redirect_to urls_path
 	end
+
+	def short
+		url = Url.find(params[:id])
+		long_url = url.long_url
+		redirect_to long_url
+	end
 end
 
 private 
