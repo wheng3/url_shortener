@@ -5,10 +5,15 @@
 </tr>
 
 <%  @urls.each do |url| %>
-    <tr>
-    <td> <a href = <%= url.long_url %> ><%= url.long_url %></a></td>
-    <td> <a href = <%= url.short_url %> ><%= url.short_url %></a> </td>
-    <td> <%= link_to 'Show', url_path(url) %> </td>
-    </tr>   
+	<tr>
+	<td> <a href = <%= url.long_url %> ><%= url.long_url %></a></td>
+	<td> <a href = <%= url.short_url %> ><%= url.short_url %></a> </td>
+	<td> <%= link_to 'Show', url_path(url) %> </td>
+	</tr>   
 <% end %>
 </table>
+
+<%= link_to "Shorten a Url!", new_url_path %>
+
+<h1>Shorten a Url!</h1>
+<%= render 'form' %>
